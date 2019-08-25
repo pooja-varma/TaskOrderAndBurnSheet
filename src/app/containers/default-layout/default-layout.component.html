@@ -1,0 +1,37 @@
+<app-header
+  [navbarBrandRouterLink]="['/dashboard']"
+  [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/img/brand/download.jpg', width: 89, height: 39, alt: 'Xoriant Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/favicon.png', width: 30, height: 30, alt: 'Xoriant Logo'}"
+  [sidebarToggler]="'lg'"
+  [asideMenuToggler]="'lg'">
+  
+  </app-header>
+<div class="app-body">
+  <app-sidebar [fixed]="true" [display]="'lg'">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <!-- Breadcrumb -->
+    <!-- breaking change 'cui-breadcrumb' -->
+    <cui-breadcrumb>
+      <!-- Breadcrumb Menu-->
+      <li class="breadcrumb-menu d-md-down-none">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          
+        </div>
+      </li>
+    </cui-breadcrumb>
+    
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  
+</div>
+<app-footer>
+  <span><a href="http://www.xoriant.com">Xoriant Solutions Private Limited</a> &copy; Innovation Engineered.</span>
+  <span class="ml-auto">Powered by <a href="http://www.xoriant.com">Xoriant Solutions Private Limited</a></span>
+</app-footer>
